@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  password_digest: MyString
-
+  name: kevin
+  password_digest: temppassword
+  token: token
 two:
-  name: MyString
-  password_digest: MyString
+  name: bob
+  password_digest: initpassword
+  token: mytoken

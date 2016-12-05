@@ -28,10 +28,15 @@ class Api::UsersController < ApplicationController
   end
 
   def logout
-    user = User.find_by_token(params[:token])
+    token = request.headers['Authorization']
+    token = token.split('=')[1] if token.present?
+    user = User.find_by_token(token) if token.present?
     if user
       user.token = nil
       user.save
+      render json: { message: 'logout successful' }
+    else
+      render json: { error: 'invalid token' }, status: 400
     end
   end
 

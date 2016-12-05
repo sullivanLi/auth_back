@@ -14,6 +14,6 @@ class ApplicationController < ActionController::API
   end
 
   def render_unauthorized(realm = "Application")
-    render json: { error: 'Bad credentials' }, status: :unauthorized
+    render json: { error: 'bad credentials' }, status: :unauthorized
   end
 end
